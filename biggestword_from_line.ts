@@ -1,20 +1,21 @@
-//maximum letter from word
 export{}
 
-let line = "Hello my name is starktony"
-let list:number[] = []
-let words=line.split(" ");
-let listword:string[] = []
-for(const x of words){
-    // console.log(x.length);
-    list.push(x.length)
-    listword.push(x);    
+let name = "kkkkkkkkkkkkkk i am shivangouda good in maths zz";
+
+let list: string[] = name.split(" ");
+
+let m = new Map();
+for (const x of list) {
+    m.set(x.length, x);
 }
 
-// console.log(list);
-// console.log(listword);
+// Convert the iterator of keys to an array
+let keysArray = Array.from(m.keys());
 
+// Find the maximum length among the keys
+let maxLength = Math.max(...keysArray);
 
-console.log((listword.sort().reverse())[0] +" is having maximum letter in line i.e  "+(list.sort().reverse())[0]+"  letters ");
+// Get the word associated with the maximum length from the map
+let maxLetterWord = m.get(maxLength);
 
-
+console.log("Word with maximum number of letters:", maxLetterWord); // Output: shivangouda
